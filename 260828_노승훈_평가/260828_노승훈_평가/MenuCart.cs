@@ -13,6 +13,7 @@
     public void Add(T menu)
     {
         menuCart.Add(menu);
+        Console.WriteLine($"{menu._name}을 담았습니다.");
     }
 
     public T Get(int number) // 번호를 받는다, 반환형이 T일것
