@@ -1,7 +1,4 @@
-﻿public class Desert : CafeMenu
+﻿public class Desert : CafeMenu, PrintMenu
 {
-    public Desert(string name, int price, CafeMenu.PriceState priceState, int amount) : base(name,  price, priceState, amount)
-    {
-        
-    }
+    
 }
