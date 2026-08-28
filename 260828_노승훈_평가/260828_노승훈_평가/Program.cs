@@ -103,8 +103,25 @@ public class Program
         menuCart.Add(todayMenu[4]);
         Console.WriteLine($"{todayMenu[4]._name}을(를) 담았습니다.");
         totalPrice += todayMenu[4]._price;
+
+        Console.WriteLine($"총 금액: {totalPrice}원 \n결제하시겠습니까?");
+        Console.WriteLine("결제하기 [1] / 결제취소 [2]");
         // 인터페이스로 만들 것:
         
-        
+        // 보유 금액을 만들고 switch로 결제해보기
+        // + 결제 취소까지 만들기
+        int haveMoney = 30000;
+
+        switch (Convert.ToInt32(Console.ReadLine()))
+        {
+            case 1:
+                haveMoney -= totalPrice;
+                Console.WriteLine($"결제가 완료되었습니다.");
+                Console.WriteLine($"남은 돈: {haveMoney}원");
+                break;
+            case 2:
+                Console.WriteLine("결제를 취소합니다. 이용해주셔서 감사합니다.");
+                break;
+        }
     }
 }
