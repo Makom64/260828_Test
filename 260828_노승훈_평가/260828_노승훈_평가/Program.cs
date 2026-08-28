@@ -20,7 +20,7 @@ public class Program
         todayMenu[4] = new Desert("매콤치즈 어니언 베이글", 2000, SaleState.Regular);
 
         // 장바구니 생성
-        List<CafeMenu> menuCart = new List<CafeMenu>(5);
+        MenuCart<CafeMenu> menuCart = new MenuCart<CafeMenu>(todayMenu.Length);
         
         // 메뉴 출력
         for (int i = 0; i < todayMenu.Length; i++)
@@ -31,11 +31,13 @@ public class Program
         Console.WriteLine("--------------------");
         
         // 장바구니에 메뉴를 담고 안내한다.
-        foreach (CafeMenu menu in todayMenu)
+        for (int i = 0; i < todayMenu.Length; i++)
         {
-            menuCart.Add(menu);
-            Console.WriteLine($"{menu._name}을(를) 담았습니다.");
+            menuCart.Add(todayMenu[i]);
+            
         }
+        
+        
         Console.WriteLine("--------------------");
         
         // 장바구니에 담은걸 출력해보기

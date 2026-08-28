@@ -1,4 +1,4 @@
-﻿public class MenuCart<T> where T : CafeMenu
+﻿public class MenuCart<T> where T : CafeMenu, AddCart
 {
     private List<T> menuCart; // 장바구니 배열
     private int AddedMenu; // 더한 메뉴
@@ -14,6 +14,12 @@
     {
         menuCart.Add(menu);
         Console.WriteLine($"{menu._name}을 담았습니다.");
+    }
+
+    public void AddtoCart(T menu)
+    {
+        menuCart.Add(menu);
+        Console.WriteLine($"{menu._name}을(를) 담았습니다.");
     }
 
     public T Get(int number) // 번호를 받는다, 반환형이 T일것

@@ -1,4 +1,4 @@
-﻿public abstract class CafeMenu : MenuPrinter
+﻿public abstract class CafeMenu : MenuPrinter, AddCart
 {
     public string _name { get; protected set; }
     public int _price { get; protected set; }
@@ -23,6 +23,10 @@
             state = "할인";
             Console.WriteLine($"{menu._name} {menu._price} {state}");
         }
+    }
+    public void AddtoCart(CafeMenu menu)
+    {
+        
     }
 }
 
