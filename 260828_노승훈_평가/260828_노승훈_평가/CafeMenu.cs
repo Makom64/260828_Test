@@ -3,7 +3,7 @@
     private string _name;
     private Sort _sort;
     private int _price;
-    private PriceState _priceState;
+    private PriceState _priceState =  PriceState.Regular;
     private int _amount;
     
     public enum PriceState : byte // 가격 상태
@@ -28,4 +28,5 @@
         _priceState = priceState;
         _amount = amount;
     }
+    
 }
