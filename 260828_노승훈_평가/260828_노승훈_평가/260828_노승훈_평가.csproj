@@ -8,4 +8,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Compile Remove="EmptyCart.cs" />
+    </ItemGroup>
+
 </Project>
