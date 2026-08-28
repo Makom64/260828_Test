@@ -15,6 +15,12 @@ public class Program
         todayMenu[2] = new Drink("아이스티", 2000, SaleState.Regular);
         todayMenu[3] = new Desert("초코칩 쿠키", 2000, SaleState.Regular);
         todayMenu[4] = new Desert("크림치즈 어니언 베이글", 2000, SaleState.Regular);
+
+        for (int i = 0; i < todayMenu.Length; i++)
+        {
+            Console.Write($"{i + 1}. ");
+            todayMenu[i].PrintMenu(todayMenu[i]);
+        }
         
         Console.WriteLine("--------------------");
         Console.WriteLine("[장바구니]");

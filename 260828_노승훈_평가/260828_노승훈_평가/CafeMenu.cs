@@ -1,4 +1,4 @@
-﻿public class CafeMenu
+﻿public abstract class CafeMenu : MenuPrinter
 {
     public string _name { get; protected set; }
     public int _price { get; protected set; }
@@ -9,6 +9,20 @@
         _name = name;
         _price = price;
         _state = state;
+    }
+    public void PrintMenu(CafeMenu menu)
+    {
+        string state;
+        if (menu._state == SaleState.Regular)
+        {
+            state = "정가";
+            Console.WriteLine($"{menu._name} {menu._price} {state}");
+        }
+        else if (menu._state == SaleState.Discount)
+        {
+            state = "할인";
+            Console.WriteLine($"{menu._name} {menu._price} {state}");
+        }
     }
 }
 
