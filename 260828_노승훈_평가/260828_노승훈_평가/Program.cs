@@ -9,24 +9,16 @@ public class Program
         Console.WriteLine($"{STORE} 키오스크");
         Console.WriteLine("--------------------");
         Console.WriteLine("[메뉴판]");
-        Menu[] todayMenu = new Menu[6];
-        todayMenu[0] = new Menu("아메리카노",2000,PriceState.Regular,10,Sort.Drink);
-        todayMenu[1] = new Menu("아이스티",2300,PriceState.Regular,10,Sort.Drink);
-        todayMenu[2] = new Menu("카페 라때",2900,PriceState.Regular,10,Sort.Drink);
-        todayMenu[3] = new Menu("크림치즈 어니언 베이글",3900,PriceState.Discount,8,Sort.Desert);
-        todayMenu[4] = new Menu("초코칩 쿠키",1500,PriceState.Regular,5,Sort.Drink);
-        todayMenu[5] = new Menu("매콤 텀블러",5500,PriceState.Regular,1,Sort.Merch);
-        foreach (Menu menu in todayMenu)
-        {
-            PrintInfo(menu);
-        }
+        CafeMenu[] todayMenu = new CafeMenu[6];
+        todayMenu[0] = new CafeMenu( "아메리카노", CafeMenu.Sort.Drink,2000, CafeMenu.PriceState.Regular, 10);
+        todayMenu[1] = new CafeMenu( "카페라때", CafeMenu.Sort.Drink,2300, CafeMenu.PriceState.Regular, 10);
+        todayMenu[2] = new CafeMenu( "아이스티",CafeMenu.Sort.Drink, 1900, CafeMenu.PriceState.Regular, 10);
+        todayMenu[3] = new CafeMenu( "어니언 크림치즈 베이글", CafeMenu.Sort.Desert,3500, CafeMenu.PriceState.Discount, 10);
+        todayMenu[4] = new CafeMenu( "초코칩 쿠키", CafeMenu.Sort.Desert,2000, CafeMenu.PriceState.Discount, 20);
+        todayMenu[5] = new CafeMenu( "매콤 텀블러", CafeMenu.Sort.Merch,5000, CafeMenu.PriceState.Regular, 5);
         
         Console.WriteLine("--------------------");
         Console.WriteLine("[장바구니]");
         Console.WriteLine("--------------------");
-    }
-    public static void PrintInfo(Menu m)
-    {
-        Console.WriteLine($"{m.Name}({m.Sort})  {m.Price}원[{m.PriceState}]  남은 수량: {m.Amount}");
     }
 }
