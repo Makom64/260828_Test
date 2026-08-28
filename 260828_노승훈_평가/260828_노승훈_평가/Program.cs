@@ -30,9 +30,16 @@ public class Program
         List<CafeMenu> menuCart = new List<CafeMenu>(5);
         
         // 장바구니에 메뉴를 담는다.
-        menuCart.AddtoCart(todayMenu[0]);
+        foreach (CafeMenu menu in todayMenu)
+        {
+            menuCart.Add(menu);
+        }
         
-        
+        // 장바구니에 담은걸 출력해보기
+        for (int i = 0; i < menuCart.Count; i++)
+        {
+            Console.WriteLine($"{menuCart[i]._name}");
+        }
         
         Console.WriteLine("--------------------");
         

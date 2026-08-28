@@ -1,4 +1,4 @@
-﻿public class MenuCart<T>
+﻿public class MenuCart<T> where T : CafeMenu
 {
     private List<T> menuCart; // 장바구니 배열
     private int AddedMenu; // 더한 메뉴
@@ -10,7 +10,7 @@
     }
 
     // CafeMenu(무엇인지 모름)을 배열에 담아주는 메서드
-    public void AddtoCart(T menu)
+    public void Add(T menu)
     {
         menuCart.Add(menu);
     }
