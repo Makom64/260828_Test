@@ -28,13 +28,23 @@ public class Program
         cart.Add(todayMenu[5]); // 사이다L
         cart.Add(todayMenu[3]); // 감튀s
         cart.Add(todayMenu[1]); // 치즈 버거
-        
-        // 장바구니에 담긴 것들 출력해보기
-        foreach (MenuInfo m in cart)
+
+        for (int i = 0; i < cart.Count; i++)
         {
-            Console.WriteLine($"{m.name}");
+            Console.WriteLine($"{i + 1}. {cart[i].name} {cart[i].price}");
         }
 
-        Console.WriteLine($"장바구니: {cart.Count} 개");
+        Console.WriteLine($"장바구니: {cart.Count}");
+
+        Console.WriteLine("========");
+        
+        cart.Remove(cart[1]);
+
+        for (int i = 0; i < cart.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {cart[i].name} {cart[i].price}");
+        }
+        
+        Console.WriteLine($"장바구니: {cart.Count}");
     }
 }
