@@ -20,7 +20,58 @@ public class Program
             Console.Write($"{i+1}. ");
             todayMenu[i].PrintMenu();
         }
-        
+
+        bool selectMenu = false;
+        List<MenuInfo> cart = new List<MenuInfo>();
+        Console.WriteLine("담을 메뉴를 번호로 골라주세요.");
+        while (!selectMenu)
+        {
+            int select = Convert.ToInt32(Console.ReadLine());
+            
+            cart.Add(todayMenu[select]);
+            Console.WriteLine($"{todayMenu[select].name}을 담았습니다.");
+            Console.WriteLine("[1] 결제하기, [2]더 담기, [3]장바구니 비우기");
+            int select2 = Convert.ToInt32(Console.ReadLine());
+            
+            switch (select2)
+            {
+                case 1:
+                    selectMenu = true;
+                    break;
+                case 2:
+                    for (int i = 0; i < todayMenu.Length; i++)
+                    {
+                        Console.Write($"{i+1}. ");
+                        todayMenu[i].PrintMenu();
+                    }
+                    Console.WriteLine("담을 메뉴를 번호로 골라주세요.");
+                    break;
+                case 3:
+                    cart.Clear();
+                    Console.WriteLine("장바구니를 비웠습니다.");
+                    for (int i = 0; i < todayMenu.Length; i++)
+                    {
+                        Console.Write($"{i+1}. ");
+                        todayMenu[i].PrintMenu();
+                    }
+                    Console.WriteLine("담을 메뉴를 번호로 골라주세요.");
+                    break;
+            }
+        }
+        for (int i = 0; i < cart.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {cart[i].name} {cart[i].price}");
+        }
+
+        int totalPrice = 0;
+
+        foreach (MenuInfo menu in cart)
+        {
+            totalPrice += menu.price;
+        }
+
+        Console.WriteLine($"총 금액: {totalPrice}");
+        /*
         // 장바구니 만들기
         List<MenuInfo> cart = new List<MenuInfo>();
         cart.Add(todayMenu[0]); // 매콤 버거
@@ -28,7 +79,9 @@ public class Program
         cart.Add(todayMenu[5]); // 사이다L
         cart.Add(todayMenu[3]); // 감튀s
         cart.Add(todayMenu[1]); // 치즈 버거
+        */
 
+        /*
         for (int i = 0; i < cart.Count; i++)
         {
             Console.WriteLine($"{i + 1}. {cart[i].name} {cart[i].price}");
@@ -37,14 +90,16 @@ public class Program
         Console.WriteLine($"장바구니: {cart.Count}");
 
         Console.WriteLine("========");
-        
+
         cart.Remove(cart[1]);
 
         for (int i = 0; i < cart.Count; i++)
         {
             Console.WriteLine($"{i + 1}. {cart[i].name} {cart[i].price}");
         }
-        
+
         Console.WriteLine($"장바구니: {cart.Count}");
+        */
+
     }
 }
