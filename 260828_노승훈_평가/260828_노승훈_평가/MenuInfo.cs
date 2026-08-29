@@ -2,6 +2,7 @@
 {
     protected string name;
     protected int price;
+    protected MenuSize size;
 
     public MenuInfo(string name, int price)
     {

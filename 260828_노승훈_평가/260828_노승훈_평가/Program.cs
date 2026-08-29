@@ -5,5 +5,14 @@ public class Program
     public static void Main(string[] args)
     {
         const string BURGER_STORE = "매콤리아";
+        
+        // 배열로 메뉴 만들어보기
+        MenuInfo[] todayMenu = new MenuInfo[6];
+        todayMenu[0] = new Burger("매콤 버거", 5000);
+        todayMenu[1] = new Burger("매콤 치즈 버거", 5500);
+        todayMenu[2] = new Side("감자튀김", 2000, MenuSize.Large);
+        todayMenu[3] = new Side("감자튀김",2000, MenuSize.Small);
+        todayMenu[4] = new Drink("매콤 콜라", 2000, MenuSize.Small);
+        todayMenu[5] = new Drink("매콤 사이다", 2000, MenuSize.Large);
     }
 }
