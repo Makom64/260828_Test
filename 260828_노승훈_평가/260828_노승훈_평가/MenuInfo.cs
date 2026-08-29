@@ -1,7 +1,7 @@
 ﻿public abstract class MenuInfo
 {
     public string name { get; private set; }
-    protected int price;
+    public int price { get; protected set; }
     protected MenuSize size;
 
     public MenuInfo(string name, int price)

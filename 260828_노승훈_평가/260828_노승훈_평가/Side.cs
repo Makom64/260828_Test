@@ -2,8 +2,6 @@
 {
     public Side(string name, int price, MenuSize size) : base(name, price)
     {
-        this.price = price;
-
         switch (size)
         {
             case MenuSize.Large:
