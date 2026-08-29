@@ -35,6 +35,6 @@ public class Program
             Console.WriteLine($"{m.name}");
         }
 
-        Console.WriteLine($"{cart.Count}");
+        Console.WriteLine($"장바구니: {cart.Count} 개");
     }
 }
