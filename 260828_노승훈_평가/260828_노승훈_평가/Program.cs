@@ -20,17 +20,21 @@ public class Program
             Console.Write($"{i+1}. ");
             todayMenu[i].PrintMenu();
         }
-
+        
+        // 장바구니 만들기
         List<MenuInfo> cart = new List<MenuInfo>();
         cart.Add(todayMenu[0]); // 매콤 버거
         cart.Add(todayMenu[3]); // 감튀s
         cart.Add(todayMenu[5]); // 사이다L
         cart.Add(todayMenu[3]); // 감튀s
         cart.Add(todayMenu[1]); // 치즈 버거
-
+        
+        // 장바구니에 담긴 것들 출력해보기
         foreach (MenuInfo m in cart)
         {
             Console.WriteLine($"{m.name}");
         }
+
+        Console.WriteLine($"{cart.Count}");
     }
 }
