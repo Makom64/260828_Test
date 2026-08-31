@@ -6,16 +6,27 @@ public class Program
     {
         const string BURGER_STORE = "매콤리아";
         
+        int selectSize = Convert.ToInt32(Console.ReadLine());
+        
+        
         // 배열로 메뉴 만들어보기
-        MenuInfo[] todayMenu = new MenuInfo[6];
+        List<MenuInfo> todayMenu = new List<MenuInfo>();
         todayMenu[0] = new Burger("매콤 버거", 5000);
         todayMenu[1] = new Burger("매콤 치즈 버거", 5500);
-        todayMenu[2] = new Side("감자튀김 L", 2000, MenuSize.Large);
-        todayMenu[3] = new Side("감자튀김 S",2000, MenuSize.Small);
+        todayMenu[2] = new Side("감자튀김 S",2000, MenuSize.Small);
+        todayMenu[3] = new Side("감자튀김 L", 2000, MenuSize.Large);
         todayMenu[4] = new Drink("매콤 콜라 S", 2000, MenuSize.Small);
-        todayMenu[5] = new Drink("매콤 사이다 L", 2000, MenuSize.Large);
+        todayMenu[5] = new Drink("매콤 콜라 L", 2000, MenuSize.Large);
+        todayMenu[6] = new Drink("매콤 사이다 S", 2000, MenuSize.Small);
+        todayMenu[7] = new Drink("매콤 사이다 L", 2000, MenuSize.Large);
 
-        for (int i = 0; i < todayMenu.Length; i++)
+        List<MenuInfo> menuList = new List<MenuInfo>();
+        menuList[0] = new Burger("매콤 버거", 5000);
+        menuList[1] = new Side("감자튀김 S",2000, MenuSize.Small);
+        
+        
+        
+        for (int i = 0; i < todayMenu.Count; i++)
         {
             Console.Write($"{i+1}. ");
             todayMenu[i].PrintMenu();
@@ -27,12 +38,12 @@ public class Program
         while (!selectMenu)
         {
             int select = Convert.ToInt32(Console.ReadLine());
-            
+
             cart.Add(todayMenu[select]);
             Console.WriteLine($"{todayMenu[select].name}을 담았습니다.");
             Console.WriteLine("[1] 결제하기, [2]더 담기, [3]장바구니 비우기");
             int select2 = Convert.ToInt32(Console.ReadLine());
-            
+
             switch (select2)
             {
                 case 1:
@@ -71,6 +82,9 @@ public class Program
         }
 
         Console.WriteLine($"총 금액: {totalPrice}");
+        
+
+
         /*
         // 장바구니 만들기
         List<MenuInfo> cart = new List<MenuInfo>();
