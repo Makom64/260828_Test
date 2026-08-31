@@ -23,15 +23,16 @@ public class Program
         List<MenuInfo> menuList = new List<MenuInfo>();
         menuList[0] = new Burger("매콤 버거", 5000);
         menuList[1] = new Side("감자튀김 S",2000, MenuSize.Small);
-        
-        
-        
-        for (int i = 0; i < todayMenu.Count; i++)
-        {
-            Console.Write($"{i+1}. ");
-            todayMenu[i].PrintMenu();
-        }
+        menuList[2] = new Drink("매콤 콜라 S", 2000, MenuSize.Small);
+        menuList[3] = new Drink("매콤 사이다 S", 2000, MenuSize.Small);
 
+        for (int i = 0; i < menuList.Count; i++)
+        {
+            Console.Write($"{i+1}.");
+            menuList[i].PrintMenu();
+        }
+        
+        
         bool selectMenu = false;
         List<MenuInfo> cart = new List<MenuInfo>();
         Console.WriteLine("담을 메뉴를 번호로 골라주세요.");
@@ -39,6 +40,10 @@ public class Program
         {
             int select = Convert.ToInt32(Console.ReadLine());
 
+            switch (select)
+            {
+                case 1:
+            }
             cart.Add(todayMenu[select]);
             Console.WriteLine($"{todayMenu[select].name}을 담았습니다.");
             Console.WriteLine("[1] 결제하기, [2]더 담기, [3]장바구니 비우기");
@@ -50,7 +55,7 @@ public class Program
                     selectMenu = true;
                     break;
                 case 2:
-                    for (int i = 0; i < todayMenu.Length; i++)
+                    for (int i = 0; i < todayMenu.Count; i++)
                     {
                         Console.Write($"{i+1}. ");
                         todayMenu[i].PrintMenu();
@@ -60,7 +65,7 @@ public class Program
                 case 3:
                     cart.Clear();
                     Console.WriteLine("장바구니를 비웠습니다.");
-                    for (int i = 0; i < todayMenu.Length; i++)
+                    for (int i = 0; i < todayMenu.Count; i++)
                     {
                         Console.Write($"{i+1}. ");
                         todayMenu[i].PrintMenu();
