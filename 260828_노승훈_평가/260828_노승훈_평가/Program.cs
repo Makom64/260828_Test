@@ -38,11 +38,12 @@ public class Program
         Console.WriteLine("담을 메뉴를 번호로 골라주세요.");
         while (!selectMenu)
         {
-            int select = Convert.ToInt32(Console.ReadLine());
+            int select = Convert.ToInt32(Console.ReadLine()) - 1;
 
             switch (select)
             {
                 case 1:
+                    Console.WriteLine($"{todayMenu[select].name}을 담았습니다.");
             }
             cart.Add(todayMenu[select]);
             Console.WriteLine($"{todayMenu[select].name}을 담았습니다.");
